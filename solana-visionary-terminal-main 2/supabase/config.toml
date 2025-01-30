@@ -1,0 +1,7 @@
+[functions]
+[functions.ai-chat]
+verify_jwt = false
+[functions.ai-reason]
+verify_jwt = false
+[functions.ai-code]
+verify_jwt = false
