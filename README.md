@@ -1,69 +1,136 @@
-# Welcome to your Lovable project
+# Cheshire Terminal - Solana Token Gate
 
-## Project info
+A streamlined authentication system for Solana dApps that combines wallet verification with username registration in a sleek, terminal-inspired interface.
 
-**URL**: https://lovable.dev/projects/3f64a363-6a0c-458b-9c9b-14236d4b4d61
+## Overview
 
-## How can I edit this code?
+Cheshire Terminal's token gate system provides a simplified login process for Solana applications by:
+- Connecting users' Solana wallets
+- Allowing unique username registration
+- Verifying wallet ownership
+- Managing user profiles in MongoDB
 
-There are several ways of editing your application.
+## Features
 
-**Use Lovable**
+### 1. Simplified Authentication Flow
+- One-click wallet connection using Phantom
+- Username selection with real-time validation
+- Two-step verification process (username + wallet)
+- Persistent session management
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/3f64a363-6a0c-458b-9c9b-14236d4b4d61) and start prompting.
+### 2. Username System
+- Unique usernames per wallet
+- Real-time availability checking
+- Format validation (3-20 characters, alphanumeric + underscores)
+- Permanent username assignment for consistency
 
-Changes made via Lovable will be committed automatically to this repo.
+### 3. Wallet Integration
+- Built on @solana/wallet-adapter
+- Supports Phantom wallet
+- Metaplex DAS RPC integration
+- Secure wallet ownership verification
 
-**Use your preferred IDE**
+### 4. User Management
+- MongoDB-based user profiles
+- Username-wallet address mapping
+- Social handle storage (Twitter, Telegram, Discord)
+- Verification status tracking
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Technical Stack
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- **Frontend**: React + TypeScript
+- **Styling**: Tailwind CSS + shadcn/ui
+- **Blockchain**: Solana Web3.js
+- **Database**: MongoDB
+- **State Management**: React Query
+- **Routing**: React Router
 
-Follow these steps:
+## Getting Started
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+1. Clone the repository:
+```bash
+git clone https://github.com/8bitsats/AiTokenGate.git
+cd AiTokenGate
+```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+2. Install dependencies:
+```bash
+npm install
+```
 
-# Step 3: Install the necessary dependencies.
-npm i
+3. Configure environment variables:
+```env
+MONGODB_URI=your_mongodb_uri
+METAPLEX_SOLANA_DAS_RPC=your_metaplex_rpc_url
+```
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+4. Start the development server:
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## Usage
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+1. **Connect Wallet**
+   - Click "Connect" to initiate Phantom wallet connection
+   - Approve the connection request in Phantom
 
-**Use GitHub Codespaces**
+2. **Choose Username**
+   - Enter desired username
+   - System validates availability and format
+   - Confirm username selection
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+3. **Verify Wallet**
+   - Confirm wallet ownership with "chesh" token
+   - Complete verification process
 
-## What technologies are used for this project?
+4. **Access Terminal**
+   - Automatic redirect to terminal interface
+   - Persistent authentication across sessions
 
-This project is built with .
+## Architecture
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+```
+src/
+├── components/         # UI components
+│   ├── VerificationDialog.tsx
+│   ├── UsernameInput.tsx
+│   └── RegistrationForm.tsx
+├── hooks/             # Custom React hooks
+│   └── useRegistration.ts
+├── lib/              # Core utilities
+│   ├── api.ts        # API service
+│   └── mongodb.ts    # Database connection
+└── types/            # TypeScript definitions
+```
 
-## How can I deploy this project?
+## Security Features
 
-Simply open [Lovable](https://lovable.dev/projects/3f64a363-6a0c-458b-9c9b-14236d4b4d61) and click on Share -> Publish.
+- Unique username enforcement
+- Wallet ownership verification
+- Protected route middleware
+- MongoDB unique indexes
+- Real-time validation
 
-## I want to use a custom domain - is that possible?
+## Contributing
 
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- Solana Foundation for wallet adapter
+- Metaplex for DAS RPC
+- MongoDB team for database
+- shadcn for UI components
+
+## Contact
+
+Project Link: [https://github.com/8bitsats/AiTokenGate](https://github.com/8bitsats/AiTokenGate)
